@@ -1,0 +1,41 @@
+{
+    "server": {
+      "port" : 8080
+    },
+    "iotAgentLora":{
+      "fiware-service": "iotsensor",
+      "fiware-servicepath": "/",
+      "deviceProvisioningSettings":{
+          "entity_type": "LoraDevice",
+          "internal_attributes": {
+              "lorawan": {
+                "application_server": {
+                  "host": "eu1.cloud.thethings.network",
+                  "provider": "TTN"
+                },
+                "data_model": "application_server"            
+              }
+          }
+      },
+      "deviceAttributes":{
+        "mandatory":
+          [        
+              {
+              "name": "location",
+              "type": "geo:point"
+              }
+          ],
+        "optional":
+        [
+          {
+            "name": "temperature",
+            "type": "Number"
+          },
+          {
+            "name": "relativeHumidity",
+            "type": "Number"
+          }
+        ]
+      }                 
+    }
+}

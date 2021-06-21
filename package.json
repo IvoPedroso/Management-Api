@@ -1,0 +1,26 @@
+{
+  "name": "management-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_OPTIONS=--inspect && NODE_ENV=development nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.3",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.6",
+    "short-uuid": "^4.1.0",
+    "ttn": "^2.3.3",
+    "tts": "^0.1.0"
+  }
+}

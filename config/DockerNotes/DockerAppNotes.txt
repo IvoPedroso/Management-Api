@@ -1,0 +1,27 @@
+ENV necessários
+
+# ip ou hostname do IOT_AGENT_LORA
+IOT_AGENT_HOST
+
+# Porto do IOT_AGENT_LORA
+IOT_AGENT_PORT
+
+
+# IOT_AGENT service, identifica o service onde devices ficam registados no context broker.
+FIWARE_SERVICE
+
+# IOT_AGENT service path, identifica o service-path onde devices ficam registados no context broker.
+FIWARE_SERVICE_PATH
+
+
+# ID da aplicação na TTN
+TTN_APP_ID
+
+# AccessKey da aplicação na TTN
+TTN_ACCESS_KEY
+
+# Identificador da aplicação na TTN
+TTN_APP_EUI
+
+# Key usada para gerar chaves the sessão entre ttn e devices na TTN.
+TTN_APP_KEY

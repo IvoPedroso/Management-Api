@@ -1,0 +1,14 @@
+{
+    "IOT_AGENT_IP":"172.18.1.12",
+    "IOT_AGENT_PORT":"4041",
+    "iotService":"iotsensor",
+    "iotServicePath": "/",
+    "ttnV3":{
+        "ServerHostname": "eu1.cloud.thethings.network",
+        "ApplicationId": "ivomiguel-isel-meic-tfm",
+        "MqttUsername": "ivomiguel-isel-meic-tfm@ttn",
+        "JoinEui": "70B3D57ED0037FBA",
+        "ApiKey": "NNSXS.Q37T4BDE6T6FNASRQXMWUJIXOPK7UY4JIQ6EYDA.4BVMB5UDDUU5UDNTEBAAHYWA4JJ27YJ7P3SKXVJNDPGBNYT5JDOA",
+        "AppKey": "5EBE6CD4937849F80D405DAD2EEAB7AE"
+      }
+}
