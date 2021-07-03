@@ -151,22 +151,25 @@ module.exports = app => {
         }
         const registerTTNResponse = await ttnService.RegisterDevice(req.body.devID, devEui, ttnV3JoinEui ,ttnV3appKey,devName);
         
-        console.log("TTN Register")
+        
         let registerIotAgentResponse = null;
-        if(!registerTTNResponse.error){
-            registerIotAgentResponse = await registerDevIoT(req.body.devID,devEui, optionalAttributes);
-            console.log("Iot Register")
-            if(!registerIotAgentResponse.error){
-                let response = {"registerTTResponse": "Device Registered", "registerIotAgentResponse": "Device Registered"};
+        if(registerTTNResponse.success){
+            console.log("TTN Register")
+            registerIotAgentResponse = await registerDevIoT(req.body.devID,devEui, optionalAttributes);         
+            if(registerIotAgentResponse.success){
+                console.log("Iot Register")
+                let response = {success:true, message: "Device Registered."};
                 if(devEuiGenerated){
                     response.generateEui = devEui;
                 }
                 return res.status(200).json(response);
             }
             else{
-                // Todo Rollback.
+                ttnService.DeleteDevice(req.body.devID);
+                return res.status(500).json({success:false,"errors": { "IotAgentError":registerIotAgentResponse.message}});
             }
         }
+        return res.status(500).json({success:false, "errors": { "TtnError":registerTTNResponse.message}});
         const ttnError = (registerTTNResponse && registerTTNResponse.error) ? registerTTNResponse.error : {};
         const iotAgentError = (registerIotAgentResponse && registerIotAgentResponse.error) ? registerIotAgentResponse.error : {};
 

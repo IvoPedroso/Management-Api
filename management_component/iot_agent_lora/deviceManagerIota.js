@@ -41,10 +41,10 @@ const registerDevice = (iotAgentUrl,appID, mqttUsername, ttnV3JoinEui, appKey, a
                         }
                     })
                     console.log("iota done")
-                    return res.json();
+                    return {success: true, data: res.json()};
         }
         catch( error ){
-            return {error: error.message};
+            return {success: false, message: error.message};
         } 
     };  
 }

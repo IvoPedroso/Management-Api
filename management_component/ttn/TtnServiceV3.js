@@ -76,7 +76,7 @@ module.exports = class TtnService {
             return { success: true, device: resp.data }
         }
         catch (error) {
-            return { success: false, message: `Falha ao obter lista de dispositivos do servidor aplicacional ${this.serverHostname}` }
+            return { success: false, message: `Error listing devices from ${this.serverHostname}, Message: ${error.message}` }
         }
     }
 
@@ -98,7 +98,7 @@ module.exports = class TtnService {
             return { success: true, device: resp.data }
         }
         catch (error) {
-            return { success: false, message: `Falha ao obter lista de dispositivos do servidor aplicacional ${this.serverHostname}` }
+            return { success: false, message: `Error deleting device at ${this.serverHostname}, Message: ${error.message}` }
         }
     }
 
@@ -181,7 +181,7 @@ module.exports = class TtnService {
         }
         catch (error) {
             console.log(error)
-            return { success: false, message: `Falha ao registar dispositivo do servidor aplicacional ${this.serverHostname}` }
+            return { success: false, message: `Error registering device at ${this.serverHostname}, Message: ${error.message}` }
         }
     }
 
