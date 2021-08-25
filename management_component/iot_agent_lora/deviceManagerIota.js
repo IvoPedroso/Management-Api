@@ -87,13 +87,13 @@ const makeProvisioningBody = (mqttUsername, appID, joinEui, appKey, apiKey, devI
 
     device.attributes = [];
     deviceAttributes.mandatory.map( elem => device.attributes.push(elem));
-
-    deviceAttributes.optional.map( 
-        elem => {
-            if(optionalAttributes.includes(elem.name)){
-                device.attributes.push(elem)
-            }
-        })  
+    optionalAttributes.map( elem => device.attributes.push(elem));
+    // deviceAttributes.optional.map( 
+    //     elem => {
+    //         if(optionalAttributes.includes(elem.name)){
+    //             device.attributes.push(elem)
+    //         }
+    //     })  
     
     const body = {devices:[device]};
     return body

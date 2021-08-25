@@ -170,10 +170,6 @@ module.exports = app => {
             }
         }
         return res.status(500).json({success:false, "errors": { "TtnError":registerTTNResponse.message}});
-        const ttnError = (registerTTNResponse && registerTTNResponse.error) ? registerTTNResponse.error : {};
-        const iotAgentError = (registerIotAgentResponse && registerIotAgentResponse.error) ? registerIotAgentResponse.error : {};
-
-        return res.status(500).json({"errors": { "IotAgentError":iotAgentError, "TtnError":ttnError }});
     }
 
     controller.unregisterDevice = async (req, res) =>{
